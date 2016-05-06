@@ -1,0 +1,36 @@
+
+repositories {
+    mavenCentral()
+}
+
+
+subprojects {
+    apply plugin: 'java'
+    group = 'testsampleapp'
+    version = '0.1'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        testCompile "junit:junit:4.12"
+    }
+}
+
+project('SampleApp') {
+    dependencies {
+        compile project(':Middleware')
+        compile project(':SharedModule')
+    }
+}
+
+project('Middleware') {
+    dependencies {
+        compile project(':SpringBase')
+    }
+}
+
+project('SharedModule') {
+    dependencies {
+        compile project(':SpringBase')
+    }
+}
