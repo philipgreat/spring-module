@@ -4,15 +4,18 @@ repositories {
 }
 
 
+
+
 subprojects {
     apply plugin: 'java'
     group = 'testsampleapp'
     version = '0.1'
     repositories {
-        mavenCentral()
+        maven{ url 'http://maven.oschina.net/content/groups/public/'}
     }
     dependencies {
         testCompile "junit:junit:4.12"
+				compile 'org.springframework:spring-context:4.2.5.RELEASE'
     }
 }
 
